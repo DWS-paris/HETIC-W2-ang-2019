@@ -55,8 +55,10 @@ Export
       public submitForm = () => {
         console.log(this.formData);
 
-        // Contaterr le service
+        // Contater le service
         this.UserService.createItem( this.formData.value )
+        .then( bddResponse => console.log(bddResponse) )
+        .catch( bddResponse => console.error(bddResponse) )
       }
     //
     /* 

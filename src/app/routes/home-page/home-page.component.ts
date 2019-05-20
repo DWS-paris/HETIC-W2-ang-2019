@@ -1,15 +1,28 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from "../../services/user/user.service";
 
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
-  styles: []
+  providers: [ UserService ]
 })
 export class HomePageComponent implements OnInit {
 
-  constructor() { }
+  public userCollection: any;
+
+  constructor(
+    private UserService: UserService
+  ) { }
+
+  private getUserList = () => {
+    this.UserService.readAllItems()
+  .then( data => this.userCollection = data )
+  .catch( err => console.error(err) )
+
+  }
 
   ngOnInit() {
+    this.getUserList()
   }
 
 }

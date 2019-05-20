@@ -40,6 +40,13 @@ Export
         .toPromise().then(this.getData).catch(this.handleError);
       }
 
+      // CRUD : lire le items
+      public readAllItems = (): Promise<any> => {
+        // Reqête HTTP GET
+        return this.HttpClient.get('https://ldp.dwsapp.io/ang-w2/_all_docs?include_docs=true')
+        .toPromise().then(this.getData).catch(this.handleError);
+      }
+
       // Get the API response
       private getData(res: any){
         return res || {};
