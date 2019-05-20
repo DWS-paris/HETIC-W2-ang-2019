@@ -2,8 +2,18 @@
   [] Binding Ctrl => Vue
 -->
 <h1 [innerText]="title"></h1>
+<h2>{{title}}</h2>
 
 <!-- 
   () Binding Vue => Ctrl
 -->
 <button (click)="sayHello('Julien')">Click</button>
+
+<!-- 
+Boucle sur une collection de données
+-->
+<ul>
+  <li *ngFor="let item of dataCollection">
+    {{item.employee_name}}
+  </li>
+</ul>
