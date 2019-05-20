@@ -9,6 +9,7 @@ Imports
   // Inner
   import { AppComponent } from './app.component';
   import { MainRouter } from "./app.router";
+  import { HeaderComponent } from "./components/header/header.component";
 //
 
 
@@ -17,7 +18,8 @@ Definition
 */
   @NgModule({
     declarations: [
-      AppComponent
+      AppComponent,
+      HeaderComponent
     ],
     imports: [
       BrowserModule,
