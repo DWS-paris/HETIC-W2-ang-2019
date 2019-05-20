@@ -5,11 +5,16 @@ Imports & definition
   import { Component, OnInit } from '@angular/core';
   import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 
+  // Inner
+  import { UserService } from "../../services/user/user.service";
+
   // Definition
   @Component({
     selector: 'app-register-page',
     templateUrl: './register-page.component.html',
-    styles: []
+
+    // Ajouter le(s) service(s) dans la tableau des providers
+    providers: [ UserService ]
   })
 //
 
@@ -18,7 +23,7 @@ Imports & definition
 Export 
 */
   export class RegisterPageComponent implements OnInit {
-    /* 
+    /*
     Déclaration
     */
       // Variables
@@ -26,7 +31,10 @@ Export
 
       // Injection
       constructor(
-        private FormBuilder: FormBuilder
+        private FormBuilder: FormBuilder,
+
+        // Injecter le service dans la class
+        private UserService: UserService
       ) { }
     //
 
@@ -46,6 +54,9 @@ Export
 
       public submitForm = () => {
         console.log(this.formData);
+
+        // Contaterr le service
+        this.UserService.createItem( this.formData.value )
       }
     //
     /* 

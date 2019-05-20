@@ -6,6 +6,9 @@ Imports
   import { NgModule } from '@angular/core';
   import { RouterModule } from '@angular/router';
 
+  //=> Requête HTTP
+  import { HttpClientModule } from '@angular/common/http';
+
   // Inner
   import { AppComponent } from './app.component';
   import { MainRouter } from "./app.router";
@@ -25,7 +28,8 @@ Definition
       BrowserModule,
 
       // Configuration du router
-      RouterModule.forRoot( MainRouter, { onSameUrlNavigation: 'reload' } )
+      RouterModule.forRoot( MainRouter, { onSameUrlNavigation: 'reload' } ),
+      HttpClientModule
     ],
     providers: [],
     bootstrap: [AppComponent]
