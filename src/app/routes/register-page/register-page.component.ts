@@ -37,10 +37,10 @@ Export
         // Définir les valeurs de l'objet formData
         this.formData = this.FormBuilder.group({
           email: [ 'j.noyer@digitalworrkshop.fr', Validators.required ],
-          password: [ '', Validators.required ],
-          streetAddress: [ '', Validators.required ],
-          givenName: [ '', Validators.required ],
-          familyName: [ '', Validators.required ]
+          password: [ 'azertyuiop', Validators.required ],
+          streetAddress: [ '21 boulevard de la République 13010 Aic en Provence', Validators.required ],
+          givenName: [ 'Julien', Validators.required ],
+          familyName: [ 'Noyer', Validators.required ]
         })
       } 
 
