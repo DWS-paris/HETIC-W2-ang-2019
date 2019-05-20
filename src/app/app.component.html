@@ -9,12 +9,23 @@
 -->
 <button (click)="sayHello('Julien')">Click</button>
 
-<!-- 
-Boucle sur une collection de données
-=> Pour afficherr l'index ajouter au ngFor "let i = index"
--->
 <ul>
+  <!-- 
+  Boucle sur une collection de données
+  => Pour afficherr l'index ajouter au ngFor "let i = index"
+  -->
   <li *ngFor="let item of dataCollection">
-    {{item.employee_name}}
+    <ul>
+      <!-- {{...}} Binding Ctrl => Vue -->
+      <li>{{item.employee_name}} </li>
+
+      <!-- Affichage conditionnel -->
+      <li *ngIf="item.employee_salary ==='0'">Chomage</li>
+
+      <!-- Manipuler les class CSS -->
+      <li [ngClass]="{'highSalary': item.employee_salary > 2000}">
+        Salaire : {{item.employee_salary}}
+      </li>
+    </ul>
   </li>
 </ul>

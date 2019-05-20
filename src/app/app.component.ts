@@ -7,7 +7,22 @@ Configuration
   // Déclaration
   @Component({
     selector: 'app-root',
-    templateUrl: './app.component.html'
+    template: `
+      <header>
+        <h1 [textContent]="title"></h1>
+      </header>
+
+      <main>
+        <router-outlet></router-outlet>
+      </main>
+
+      <footer>
+        <p>Under WTFPL - Julien Noyer 2019</p>
+      </footer>
+    `,
+    styles : [`
+      .highSalary{ color: red }
+    `]
   })
 //
 
