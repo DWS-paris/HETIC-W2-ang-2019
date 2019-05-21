@@ -48,7 +48,7 @@ Export
           password: [ 'azertyuiop', Validators.required ],
           streetAddress: [ '21 boulevard de la République 13010 Aic en Provence', Validators.required ],
           givenName: [ 'Julien', Validators.required ],
-          familyName: [ 'Noyer', Validators.required ]
+          familyName: [ '', Validators.required ]
         })
       } 
 
